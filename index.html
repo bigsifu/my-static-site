@@ -1,1 +1,104 @@
-<!DOCTYPE html><html><head><title>Argus Test Site</title><style>body { font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #000; color: #fff; margin: 0; } .card { border: 1px solid #333; padding: 3rem; border-radius: 20px; text-align: center; max-width: 400px; } h1 { color: #0070f3; font-size: 3rem; margin: 0; } .eye { font-size: 4rem; margin-bottom: 1rem; }</style></head><body><div class='card'><div class='eye'>👁️</div><h1>Argus</h1><p>你好，派大星！</p><p>这是由阿格斯为你自动生成的站点。</p><p><b>Cloudflare Pages 准备就绪。</b></p></div></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argus | 站点部署测试</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --accent: #0070f3;
+            --text: #ffffff;
+            --secondary: #888;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            z-index: 1;
+        }
+        .eye-container {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: breathe 3s ease-in-out infinite;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 20px var(--accent)); }
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .status-badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 15px;
+            background: rgba(0, 112, 243, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .info-card {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            max-width: 400px;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        .label { color: var(--secondary); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="eye-container">👁️</div>
+        <h1>Argus System</h1>
+        <div class="status-badge">● 站点已上线</div>
+        
+        <div class="info-card">
+            <div class="info-item">
+                <span class="label">所有者:</span>
+                <span>派大星</span>
+            </div>
+            <div class="info-item">
+                <span class="label">部署平台:</span>
+                <span>Cloudflare Pages</span>
+            </div>
+            <div class="info-item">
+                <span class="label">同步源:</span>
+                <span>GitHub (main)</span>
+            </div>
+            <div class="info-item">
+                <span class="label">当前时间:</span>
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("time").innerText = new Date().toLocaleString();
+    </script>
+</body>
+</html>
